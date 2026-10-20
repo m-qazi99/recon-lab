@@ -1,0 +1,10 @@
+{
+  "source": "id,customer,region,amount,status\r\n1001,Bilal,North,107.00,paid\r\n1002,Chen,East,114.00,paid\r\n1003,Diya,West,121.00,paid\r\n1004,Evan,North,128.00,paid\r\n1005,Asha,East,135.00,paid\r\n1006,Bilal,West,142.00,paid\r\n1007,Chen,North,149.00,paid\r\n1008,Diya,East,156.00,paid\r\n1009,Evan,West,163.00,paid\r\n1010,Asha,North,170.00,paid\r\n1011,Bilal,East,177.00,paid\r\n1012,Chen,West,184.00,paid\r\n1013,Diya,North,191.00,paid\r\n1014,Evan,East,198.00,paid\r\n1015,Asha,West,205.00,paid\r\n1016,Bilal,North,212.00,paid\r\n1017,Chen,East,219.00,paid\r\n1018,Diya,West,226.00,paid\r\n1019,Evan,North,233.00,paid\r\n1020,Asha,East,240.00,paid\r\n1021,Bilal,West,247.00,paid\r\n1022,Chen,North,254.00,paid\r\n1023,Diya,East,261.00,paid\r\n1024,Evan,West,268.00,paid\r\n1025,Asha,North,275.00,paid\r\n1026,Bilal,East,282.00,paid\r\n1027,Chen,West,289.00,paid\r\n1028,Diya,North,296.00,paid\r\n1029,Evan,East,303.00,paid\r\n1030,Asha,West,310.00,paid\r\n",
+  "target": "id,customer,region,amount,status\r\n1001,BILAL ,North,120.03,pending\r\n1002,Chen,East,114.00,paid\r\n1003,Diya,West,121.00,paid\r\n1004,Evan,North,128.00,paid\r\n1005,Asha,East,135.03,paid\r\n1006,Bilal,West,142.00,paid\r\n1008,DIYA ,East,156.00,paid\r\n1009,Evan,West,176.0,paid\r\n1010,Asha,North,170.03,paid\r\n1011,Bilal,East,177.00,pending\r\n1012,Chen,West,184.00,paid\r\n1014,Evan,East,198.00,paid\r\n1015,ASHA ,West,205.03,paid\r\n1016,Bilal,North,212.00,paid\r\n1017,Chen,East,232.0,paid\r\n1018,Diya,West,226.00,paid\r\n1019,Evan,North,233.03,paid\r\n1020,Asha,East,240.00,paid\r\n1021,BILAL ,West,247.00,pending\r\n1022,Chen,North,254.00,paid\r\n1023,Diya,East,261.03,paid\r\n1025,Asha,North,288.0,paid\r\n1026,Bilal,East,282.00,paid\r\n1027,Chen,West,289.00,paid\r\n1028,DIYA ,North,296.03,paid\r\n1029,Evan,East,303.00,paid\r\n1030,Asha,West,310.00,paid\r\n1040,Fatima,West,140.00,paid\r\n",
+  "keys": "id",
+  "compare": "customer,region,amount,status",
+  "tolerance": ".05",
+  "relative": 0,
+  "normalize": false,
+  "workspace": "studio"
+}

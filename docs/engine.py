@@ -11,7 +11,7 @@ def index(rows,keys,label):
         out[k]=row
     return out
 
-def run(p):
+def legacy_run(p):
     sh,sr=read_csv(p.get('source',''));th,tr=read_csv(p.get('target',''))
     keys=columns(p.get('keys'),sh)
     if not keys:raise ValueError('Choose at least one key column (comma-separated).')
@@ -39,3 +39,11 @@ def run(p):
     if not compare:findings.append(finding('info','Key-presence comparison only','There are no shared non-key columns to compare.'))
     buf=io.StringIO();w=csv.writer(buf);w.writerow(['key','status','column','source','target']);w.writerows(out)
     return result('Reconciliation complete',[metric('Matching records',matched),metric('Changed records',changed),metric('Missing in target',missing),metric('Target only',extra)],['Key','Status','Column','Source','Target'],out,findings,[{'label':'Matching','value':matched},{'label':'Changed','value':changed},{'label':'Missing','value':missing},{'label':'Target only','value':extra}],[{'name':'reconciliation.csv','content':buf.getvalue()}])
+
+
+def run(p):
+    if not isinstance(p,dict):raise ValueError("Send a JSON object.")
+    if p.get("workspace")=="studio":
+        from lab import run as studio_run
+        return studio_run(p)
+    return legacy_run(p)
