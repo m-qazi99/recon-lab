@@ -8,6 +8,8 @@
 
 Move beyond row counts. Investigate field-level differences, model tolerance policies, and trace every exception to its source.
 
+<p align="center"><a href="https://m-qazi99.github.io/recon-lab/"><img src="docs/studio-preview.jpg" alt="recon-lab studio running actual Python" width="100%"></a></p>
+
 ## Explore the product
 
 Run **Mixed exceptions** → choose a business key → inspect changed fields → explore **Tolerance frontier** → click a tolerance bar → compare **Control totals**.
@@ -49,6 +51,9 @@ curl -s http://127.0.0.1:8000/api/analyze \
 # Engine, boundary, and regression tests
 python -m unittest discover -s tests -v
 python scripts/check_site.py
+
+# Regenerate the labeled synthetic first-visit preview
+python scripts/build_preview.py
 ```
 
 `examples/studio.json` is the complete version-2 experiment request. The `workspace: "studio"` field selects the advanced engine in `src/lab.py`. The original version-1 API remains available through `examples/sample.json` for compatibility. Errors return HTTP 400 with an `error` message; successful requests return metrics, evidence, artifacts, and a structured `lab` object for visualization.
@@ -69,7 +74,7 @@ flowchart TD
 - `docs/lab.py`, `docs/engine.py`, `docs/common.py` — byte-identical browser copies, checked by CI.
 - `docs/studio.js` — rendering, interaction, worker lifecycle; no duplicate analytical algorithm.
 - `docs/worker.js` — pinned Pyodide 0.27.7 runtime in a Web Worker.
-- `tests/` — **21 automated tests**, including scenario boundaries and regressions.
+- `tests/` — **22 automated tests**, including scenario boundaries and regressions.
 - `.github/workflows/tests.yml` — tests and browser/native source parity on each push.
 
 ## Scope and limitations
