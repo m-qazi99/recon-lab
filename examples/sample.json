@@ -1,0 +1,7 @@
+{
+  "source": "id,customer,amount\n1001,Asha,120.00\n1002,Bilal,85.00\n1003,Chen,95.00\n1004,Diya,210.00",
+  "target": "id,customer,amount\n1001,Asha,120.01\n1002,Bilal,89.00\n1004,Diya,210.00\n1005,Evan,50.00",
+  "keys": "id",
+  "compare": "customer,amount",
+  "tolerance": "0.02"
+}
